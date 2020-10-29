@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test:ci": "echo 'Bonjour'"
+    "test": "npm run test:ci",
+    "pretest:ci": "npm run lint",
+    "test:ci": "echo 'Bonjour'",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "7.12.1",
+    "eslint-config-usecases": "3.0.0"
   }
 }
