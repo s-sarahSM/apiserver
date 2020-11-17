@@ -8,7 +8,7 @@ const app = express()
 app.use(morgan('dev'))
 
 app.get('/', (req, res) => {
-    res.send('Hello World')
+    res.send('<h1>Hello World, From Sarra KHELLAF</h1>')
 })
 
 module.exports = app
