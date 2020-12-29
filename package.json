@@ -2,19 +2,21 @@
   "name": "jsau-apiserver",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "node src/start.js",
-    "start:watch": "nodemon",
+    "start:watch": "nodemon src/start.js",
     "test": "jest",
     "pretest:ci": "npm run lint",
-    "test:ci": "echo 'Bonjour'",
+    "test:ci": "npm run test:coverage",
+    "test:coverage": "jest --coverage",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "1.19.0",
+    "cors": "2.8.5",
     "express": "4.17.1",
     "morgan": "1.10.0"
   },
