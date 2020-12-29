@@ -47,12 +47,12 @@ const writeFile = (
 }
 
 // first_test routes
-app.get('/first_test', async(req, res) => {
+app.get('/first_test', (req, res) => {
     res.json({message : 'My firt test pass!'})
 })
 
 // Create Member
-app.post('/members', async(req, res) => {
+app.post('/members', (req, res) => {
     readFile(data => {
 
         const newMember = {
@@ -73,14 +73,14 @@ app.post('/members', async(req, res) => {
 })
 
 // Get All Members
-app.get('/members', async(req, res) => {
+app.get('/members', (req, res) => {
     readFile(data => {
         res.send(data)
     }, true)
 })
 
 // Get Single Member
-app.get('/members/:id', async(req, res) => {
+app.get('/members/:id', (req, res) => {
     readFile(data => {
         const found = data.members.some(idFilter(req))
         if (found) {
@@ -92,7 +92,7 @@ app.get('/members/:id', async(req, res) => {
 })
 
 // Update Member
-app.put('/members/:id', async(req, res) => {
+app.put('/members/:id', (req, res) => {
     readFile(data => {
 
         const found = data.members.some(idFilter(req))
@@ -115,7 +115,7 @@ app.put('/members/:id', async(req, res) => {
 })
 
 // Delete Member
-app.delete('/members/:id', async(req, res) => {
+app.delete('/members/:id', (req, res) => {
 
     readFile(data => {
         const found = data.members.some(idFilter(req))
